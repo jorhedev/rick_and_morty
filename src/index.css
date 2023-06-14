@@ -5,10 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  background-image: url("./images/Background01.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-color: rgba(0, 0, 0, 0.5); /* Cambia el valor 0.5 según la intensidad deseada */
+  background-blend-mode: multiply;
+
+  overflow-y: auto;
 }
 
 code {

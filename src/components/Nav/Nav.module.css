@@ -1,0 +1,32 @@
+.Nav{
+    display: flex;
+    justify-content: end;
+    background-color: gainsboro;
+    height: 3rem;
+}
+
+.SearchBar{
+    display: flex;
+    align-items: center;
+}
+
+.SearchBar input{
+    width: 80%;
+    height: 2.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 1.2rem;
+    background-color: whitesmoke;
+    margin-right: 3rem;
+}
+
+.SearchBar button{
+    width: 8rem;
+    height: 2.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    background-color: #fcff4f;
+    margin-right: 3rem;
+}

@@ -1,0 +1,23 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height:0.3rem;
+    width: 300px;
+    height: 450px;
+    background-color: #fcff4f;
+    font-size:0.5em;
+    margin: 4rem;
+    border-radius: 1rem;
+}
+
+
+.card img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-bottom-left-radius: 1rem; /* Aplica un radio del 50% a la esquina inferior izquierda */
+    border-bottom-right-radius: 1rem;
+  }
+  
