@@ -1,8 +1,13 @@
 .Nav{
     display: flex;
-    justify-content: end;
-    background-color: gainsboro;
+    justify-content: flex-end;
+    background:#111;
     height: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 9999;
 }
 
 .SearchBar{
@@ -22,11 +27,19 @@
 }
 
 .SearchBar button{
+    color: aliceblue;
     width: 8rem;
-    height: 2.8rem;
+    height: 2.5rem;
     border: none;
     border-radius: 0.5rem;
-    font-size: 1.2rem;
-    background-color: #fcff4f;
+    font-size: 1.1rem;
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
     margin-right: 3rem;
 }
+
+.SearchBar button:hover{
+    background: #111;
+
+}
+
+

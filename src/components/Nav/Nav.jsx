@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 import styles from './Nav.module.css'
 
@@ -8,10 +9,13 @@ const  Nav = ({onSearch, addRandomCharacter}) => {
     const [id, setId] = useState('');
     
     const handleRandomCharacter = () => {
+      const randomCharacterId = Math.floor(Math.random() * 826) + 1;
+      const apiUrl = `https://rickandmortyapi.com/api/character/${randomCharacterId}`;
+
         axios
-          .get('https://rickandmortyapi.com/api/character/')
+          .get(apiUrl)
           .then(({ data }) => {
-            const randomCharacter = data.results[Math.floor(Math.random() * data.results.length)];
+            const randomCharacter = data;
             addRandomCharacter(randomCharacter);
           })
           .catch((error) => {
@@ -32,6 +36,12 @@ const  Nav = ({onSearch, addRandomCharacter}) => {
 
        <div className={styles.Nav}>
             <div className={styles.SearchBar}>
+                <button>
+                    <NavLink to='/home'>HOME</NavLink>
+                </button>
+                <button>
+                    <NavLink to='/about'>ABOUT</NavLink>
+                </button>
                 <input type='search' value={id} onChange={handleChange} />
                 <button onClick={handleAdd}>Agregar</button> 
                 <button onClick={handleRandomCharacter}>RANDOM</button>

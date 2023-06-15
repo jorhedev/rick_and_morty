@@ -1,4 +1,6 @@
 import styles from './Card.module.css'
+import { Link } from 'react-router-dom';
+
 
 const Card = ({id, name, status, species, gender, origin, image, onClose}) =>{
    
@@ -6,16 +8,26 @@ const Card = ({id, name, status, species, gender, origin, image, onClose}) =>{
    onClose(id);
    };
 
+
+
    return (
-      <div className={styles.card}>
+      <div className={styles.container}>
+         <div className={styles.box}>
+         <b></b>
          <button onClick={handleOnClose}>X</button>
-         <h2>{name}</h2>
-         <h2>{status}</h2>
-         <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <h2>{origin}</h2>
          <img src={image} alt='' /> 
+            <div className={styles.card}>
+               <Link to={`/detail/${id}`} >
+               <h2 className="card-name">{name}</h2>
+               </Link>  
+               <h3>{status}</h3>
+               <h3>{species}</h3>
+               <h3>{gender}</h3>
+               <h3>{origin}</h3>
          
+
+            </div>
+         </div>   
       </div>
    );
 }

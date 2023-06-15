@@ -1,23 +1,132 @@
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height:0.3rem;
-    width: 300px;
-    height: 450px;
-    background-color: #fcff4f;
-    font-size:0.5em;
-    margin: 4rem;
-    border-radius: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+body{
+    display: flex;
+    min-height: 100vh;
+}
 
-.card img {
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    border-bottom-left-radius: 1rem; /* Aplica un radio del 50% a la esquina inferior izquierda */
-    border-bottom-right-radius: 1rem;
-  }
-  
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;    
+}
+
+.container .box{
+    position: relative;
+    width: 280px;
+    height: 350px;
+    margin: 28px 30px;
+    background:#111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
+}
+.container .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
+    filter: blur(30px);
+}
+
+.container .box b{
+    position: absolute;
+    inset: 6px;
+    background: rgba(0,0,0,0.8);
+    z-index: 2;
+}
+.container .box img{
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    scale: 0.8;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.container .box:hover img{
+    scale: 0.6;
+    opacity: 0.9;
+    transform: translateY(-70px);
+}
+
+.container .box .card {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 3;
+}
+
+.container .box button {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 3;
+}
+
+.container .box:hover button{
+    transform: translateY(-310px);
+}
+
+.container .box:hover .card{
+    transform: scale(1);
+    bottom: 20px;
+}
+
+.container .box .card h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container .box .card h3{
+    font-weight: 300;
+    font-size: 0.75em;
+    color: #fff;
+}
+
+.container .box button{
+    width: 50px;
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
+}
+
+.container .box button:hover{
+    width: 50px;
+    background: #111;
+}
