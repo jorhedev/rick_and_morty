@@ -1,5 +1,7 @@
 import React from 'react'
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useLocation, useNavigate} from 'react-router-dom';
+
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 
@@ -8,12 +10,38 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail'
+import Form from './components/Form/Form';
 
 
 
 function App() {
 
-   const [characters, setCharacters] = useState([]);
+   const [characters, setCharacters] = useState([]);  
+   const location = useLocation();
+   const showNav = location.pathname !== '/';
+
+   const navigate = useNavigate();
+   const [access, setAccess] = useState(false);
+   const EMAIL = "jorhe@dev.com";
+   const PASSWORD = "jorhedev01";
+
+   function login(userData) {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAccess(true);
+         navigate('/home');
+      }
+   }
+
+   function logout() {
+      setAccess(false);
+      navigate('/');
+    }
+
+    useEffect(() => {
+      if (!access) {
+        navigate('/');
+      }
+    }, [access, navigate]);
 
    const addCharacter = (newCharacter) => {
       // Verificar si el personaje ya existe en el arreglo characters
@@ -49,13 +77,16 @@ function App() {
 
    return (
       <>
-      <Nav onSearch={onSearch} addRandomCharacter={addRandomCharacter} />
+    {showNav && <Nav onSearch={onSearch} addRandomCharacter={addRandomCharacter} onLogout={logout}/>}
+
 
       <Routes>
          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
          <Route path="/about" element={<About/>}/>
          <Route path="/detail/:id" element={<Detail />} />
+         <Route path="/" element={<Form onLogin={login}/>}/>
       </Routes>
+
       </>
    );
 }

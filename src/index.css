@@ -6,13 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("./images/Background01.jpg");
+  /* background-image: url("./images/Background01.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size:cover;
-  background-color: rgba(0, 0, 0, 0.5); /* Cambia el valor 0.5 según la intensidad deseada */
-  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.58); /* Cambia el valor 0.5 según la intensidad deseada */
+  /* background-blend-mode: multiply; */ 
 
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 code {

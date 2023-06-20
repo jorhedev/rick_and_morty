@@ -5,10 +5,13 @@ import styles from './Cards.module.css'
 const Cards = ({characters, onClose}) => {
 
    return(
-   <div className={styles.cards}>
-      {
-      characters.map(({id, name, status, species, gender, origin, image}) => (
-      <Card
+   <div className={styles.container}>
+      <h2>Rick and Morty</h2>
+      <>
+      <div className={styles.cards}>
+         {
+         characters.map(({id, name, status, species, gender, origin, image}) => (
+         <Card
          key={id}
          id={id}
          name={name}
@@ -19,9 +22,11 @@ const Cards = ({characters, onClose}) => {
          image={image}
          onClose={onClose}
 
-      />
-      ))
-      }
+         />
+         ))
+         }
+      </div>
+      </>
    </div>
    );
 }

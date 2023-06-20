@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './Nav.module.css'
 
-const  Nav = ({onSearch, addRandomCharacter}) => {
+const  Nav = ({onSearch, addRandomCharacter, onLogout}) => {
 
     const [id, setId] = useState('');
     
@@ -36,6 +36,7 @@ const  Nav = ({onSearch, addRandomCharacter}) => {
 
        <div className={styles.Nav}>
             <div className={styles.SearchBar}>
+              <button onClick={onLogout}>LOGOUT</button>
                 <button>
                     <NavLink to='/home'>HOME</NavLink>
                 </button>
