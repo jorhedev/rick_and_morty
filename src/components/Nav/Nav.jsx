@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import styles from './Nav.module.css'
 
 const  Nav = ({onSearch, addRandomCharacter, onLogout}) => {
 
+    const location = useLocation();
     const [id, setId] = useState('');
     
     const handleRandomCharacter = () => {
@@ -32,21 +33,24 @@ const  Nav = ({onSearch, addRandomCharacter, onLogout}) => {
     setId('');
     };
 
+    const isHomeRoute = location.pathname === '/home';
+
     return (
 
-       <div className={styles.Nav}>
-            <div className={styles.SearchBar}>
-              <button onClick={onLogout}>LOGOUT</button>
-                <button>
-                    <NavLink to='/home'>HOME</NavLink>
-                </button>
-                <button>
-                    <NavLink to='/about'>ABOUT</NavLink>
-                </button>
-                <input type='search' value={id} onChange={handleChange} />
-                <button onClick={handleAdd}>Agregar</button> 
-                <button onClick={handleRandomCharacter}>RANDOM</button>
-            </div>
+       <div className={styles.container}>
+            <NavLink to='/home'>
+            <img src={require("../../images/logo.png")} alt="Logo" />
+            </NavLink>
+
+              <ul className={styles.navLinks}>
+                <li><button onClick={onLogout} className={styles.navlinkButton}>LOGOUT</button></li>
+                <li><NavLink to='/about' className={`${styles.navlinkButton} ${styles.about}`}>ABOUT</NavLink></li>
+                {isHomeRoute && (<>
+                <li><input type='search' value={id} onChange={handleChange} placeholder="Buscar..."/></li>
+                <li><button onClick={handleAdd} className={styles.navlinkButton}>AGREGAR</button> </li>
+                <li><button className={styles.navlinkButton} onClick={handleRandomCharacter}>RANDOM</button></li>
+                </>)}
+              </ul>
        </div>
     );
  }

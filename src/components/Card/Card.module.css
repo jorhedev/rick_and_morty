@@ -48,7 +48,7 @@ body{
     width: 100%;
     height: 100%;
     background: linear-gradient(315deg,#4dff03,#00d0ff);
-    filter: blur(20px);
+    filter: blur(15px);
 }
 
 .container .box b{
@@ -122,11 +122,19 @@ body{
 }
 
 .container .box button{
+    color: #4dff03;
+    cursor: pointer;
     width: 50px;
-    background: linear-gradient(315deg,#4dff03,#00d0ff);
+    border-radius: 10px;
+    background: transparent;
+    transition: 0.5s;
+
 }
 
 .container .box button:hover{
     width: 50px;
     background: #111;
+    border: 2px solid #00d0ff;
+    box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
+
 }

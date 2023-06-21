@@ -1,45 +1,92 @@
-.Nav{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+li, button{
+    color: white;
+}
+
+li, button{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+
+.container{
     display: flex;
-    justify-content: flex-end;
-    background:#111;
-    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
+    height: 3rem;
     z-index: 9999;
+    padding: 30px 30px;
+    background-color:rgb(7, 7, 7);
 }
 
-.SearchBar{
-    display: flex;
-    align-items: center;
+
+.navLinks{
+    list-style: none;
 }
 
-.SearchBar input{
-    width: 80%;
-    height: 2.8rem;
+.navLinks li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navLinks li input{
+    color: #4dff03;;
     border: none;
-    border-radius: 0.5rem;
-    outline: none;
-    font-size: 1.2rem;
-    background-color: whitesmoke;
-    margin-right: 3rem;
+    box-shadow: 0 0 10px cyan, 0 0 10px #4dff03;
+    border-radius: 30px;
+    background-color: rgb(7, 7, 7);
+    padding-left: 1rem;
+    width: 9rem;
+    height: 2rem;
 }
 
-.SearchBar button{
-    color: aliceblue;
-    width: 8rem;
+.navLinks li input:hover{
+    background: transparent;
+    border: 2px solid #00d0ff;
+    box-shadow: 0 0 20px cyan, 0 0 20px #4dff03;
+}
+
+.navlinkButton{
+    font-size: 1rem;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    width: 7rem;
     height: 2.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1.1rem;
-    background: linear-gradient(315deg,#4dff03,#00d0ff);
-    margin-right: 3rem;
+    border-radius: 30px;
+    transition: 0.5s;
 }
 
-.SearchBar button:hover{
-    background: #111;
+.navlinkButton.about {
+    padding: 0.45rem 2.5rem;
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
 
+.navlinkButton:hover{
+    background: transparent;
+    border: 2px solid #00d0ff;
+    box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
+
+    cursor: pointer;
 }
 
+
+.container img{
+    width: 100px;  
+}
 

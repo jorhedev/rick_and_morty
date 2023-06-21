@@ -32,6 +32,7 @@ const Detail = () => {
         {character.image && <img src={character.image} alt={character.name} />}
         <div className={styles.aboutMe}>
         <h2>{character.name}</h2>
+        <p><span>ID:</span>{character.id}</p>
         <p><span> Status: </span>{character.status}</p>
         <p><span> Species: </span>{character.species}</p>
         <p><span> Gender:</span> {character.gender}</p>

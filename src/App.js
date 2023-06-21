@@ -11,6 +11,7 @@ import Nav from './components/Nav/Nav';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail'
 import Form from './components/Form/Form';
+import Error404 from './components/Error404/Error404';
 
 
 
@@ -81,10 +82,13 @@ function App() {
 
 
       <Routes>
+
          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
          <Route path="/about" element={<About/>}/>
          <Route path="/detail/:id" element={<Detail />} />
          <Route path="/" element={<Form onLogin={login}/>}/>
+         <Route path="*" element={<Error404/>}/>
+         
       </Routes>
 
       </>

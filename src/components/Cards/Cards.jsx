@@ -6,7 +6,6 @@ const Cards = ({characters, onClose}) => {
 
    return(
    <div className={styles.container}>
-      <h2>Rick and Morty</h2>
       <>
       <div className={styles.cards}>
          {
