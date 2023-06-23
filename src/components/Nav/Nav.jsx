@@ -45,6 +45,7 @@ const  Nav = ({onSearch, addRandomCharacter, onLogout}) => {
               <ul className={styles.navLinks}>
                 <li><button onClick={onLogout} className={styles.navlinkButton}>LOGOUT</button></li>
                 <li><NavLink to='/about' className={`${styles.navlinkButton} ${styles.about}`}>ABOUT</NavLink></li>
+                <li><NavLink to='/favorites' className={`${styles.navlinkButton} ${styles.about}`}>FAVORITES</NavLink></li>
                 {isHomeRoute && (<>
                 <li><input type='search' value={id} onChange={handleChange} placeholder="Buscar..."/></li>
                 <li><button onClick={handleAdd} className={styles.navlinkButton}>AGREGAR</button> </li>

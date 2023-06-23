@@ -79,7 +79,7 @@
 .form button{
     font-size: 1rem;
     margin: auto;
-    margin-top: 3   rem;
+    margin-top: 1rem;
     background: linear-gradient(315deg,#4dff03,#00d0ff);
     color: rgba(0, 0, 0);
     text-decoration: none;

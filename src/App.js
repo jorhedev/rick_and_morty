@@ -11,6 +11,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail'
 import Form from './components/Form/Form';
 import Error404 from './components/Error404/Error404';
+import Favorites from './components/Favorites/Favorites';
 
 
 
@@ -77,6 +78,7 @@ function App() {
          <Route path="/" element={access ? <Navigate to="/home" /> : <Form onLogin={login} />}/>
          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/> 
          <Route path="/about" element={<About/>}/>
+         <Route path="/favorites" element={<Favorites/>} />
          <Route path="/detail/:id" element={<Detail />} />
          <Route path="*" element={<Error404/>}/>
          
