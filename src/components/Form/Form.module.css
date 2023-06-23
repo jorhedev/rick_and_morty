@@ -21,18 +21,11 @@
     background-blend-mode: multiply;
 }
 
-.container h1{
-    color: white;
-    margin-top: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-
-
-}
 
 .container .box{
     position: relative;
     width: 280px;
-    height: 350px;
+    height: 380px;
     background:#111;
     display: flex;
     justify-content: center;
@@ -48,27 +41,51 @@
     
 }
 
+.form h1{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #4dff03;
+
+}
+
 .form label{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #00d0ff;
+    color: white;
     width: 180px;
 }
+
 .form input{
+    font-size: 1rem;
     margin-top: 0.5rem;
+    color: #4dff03;
+    border: none;
+    box-shadow: 0 0 5px cyan, 0 0 5px #4dff03;
+    background-color:  rgba(0, 0, 0, 0.3);
+    padding-left: 1rem;
+
+}
+
+.form input:hover{
+    background: transparent;
+    border: 2px solid #00d0ff;
+    box-shadow: 0 0 20px cyan, 0 0 20px #4dff03;
 }
 
 
 .form button{
+    font-size: 1rem;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 3   rem;
     background: linear-gradient(315deg,#4dff03,#00d0ff);
-    color: white;
+    color: rgba(0, 0, 0);
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
-    width: 6rem;
+    width: 7rem;
     height: 1.8rem;
     border-radius: 30px;
     transition: 2s;
@@ -79,14 +96,15 @@
 }
 
 .form button:hover{
+    color: white    ;
     background: transparent;
     border: 2px solid #00d0ff;
     cursor: pointer;
 }
 
 .error {
-    font-size: 12px;
+    font-size: 0.8rem;
     margin-top: 5px;
-    width: 180px;
+    width: 217px;
 
   }

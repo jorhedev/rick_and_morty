@@ -3,6 +3,7 @@ import styles from './Form.module.css'
 import { validateEmail, validatePassword } from './validation.js';
 
 
+
 const Form = ({onLogin}) =>{
 
     const [userData, setUserData] = useState({
@@ -58,10 +59,9 @@ const Form = ({onLogin}) =>{
 
     return(
         <div className={styles.container}>
-            <h1>LOGIN</h1>
-
             <div className={styles.box}>
                 <form className={styles.form} onSubmit={handleOnSubmit}>
+                <h1>LOGIN</h1>
 
                 <label htmlFor="email">Email:</label>
                 <input type="text" name="email" value={userData.email} onChange={handleOnChange} />
@@ -69,7 +69,7 @@ const Form = ({onLogin}) =>{
                 <label htmlFor="password">Password:</label>
                 <input type="password" name="password" value={userData.password} onChange={handleOnChange} />
                 {errors.password && <p className={styles.error}>{errors.password}</p>}                
-                <button type="submit" onClick={handleSubmit} disabled={!userData.email || !userData.password || Object.keys(errors).length > 0 }>Submit</button>
+                <button type="submit" onClick={handleSubmit} disabled={!userData.email || !userData.password || Object.keys(errors).length > 0 }>Login</button>
 
             </form>
             </div>

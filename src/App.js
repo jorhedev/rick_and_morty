@@ -1,11 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from "react"
-import { useLocation, useNavigate} from 'react-router-dom';
+import { useState } from "react"
+import { useLocation, useNavigate, Navigate, Routes, Route} from 'react-router-dom';
 
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
-
 import './App.css';
+
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav';
 import About from './components/About/About';
@@ -38,12 +37,6 @@ function App() {
       navigate('/');
     }
 
-    useEffect(() => {
-      if (!access) {
-        navigate('/');
-      }
-    }, [access, navigate]);
-
    const addCharacter = (newCharacter) => {
       // Verificar si el personaje ya existe en el arreglo characters
       const isDuplicate = characters.some((character) => character.id === newCharacter.id);
@@ -57,12 +50,10 @@ function App() {
          .then(({ data }) => {
          if (data.name) {
             addCharacter(data);
-         } else {
-         window.alert('¡No hay personajes con este ID!');
-         }
+         } 
       })
       .catch((error) => {
-      console.error('Error al buscar el personaje:', error);
+      alert('No hay personajes de este ID', error);
       });
    };
 
@@ -78,20 +69,20 @@ function App() {
 
    return (
       <>
-    {showNav && <Nav onSearch={onSearch} addRandomCharacter={addRandomCharacter} onLogout={logout}/>}
 
+    {showNav && <Nav onSearch={onSearch} addRandomCharacter={addRandomCharacter} onLogout={logout}/>}
 
       <Routes>
 
-         <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
+         <Route path="/" element={access ? <Navigate to="/home" /> : <Form onLogin={login} />}/>
+         <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/> 
          <Route path="/about" element={<About/>}/>
          <Route path="/detail/:id" element={<Detail />} />
-         <Route path="/" element={<Form onLogin={login}/>}/>
          <Route path="*" element={<Error404/>}/>
          
       </Routes>
-
       </>
+
    );
 }
 
