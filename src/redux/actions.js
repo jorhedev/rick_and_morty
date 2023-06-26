@@ -1,9 +1,9 @@
 import {ADD_FAV, REMOVE_FAV} from './action-types'
 
-export const addFav = (character) =>{
+export const addFav = (characters) =>{
     return{
         type: ADD_FAV,
-        payload: character
+        payload: characters
     }
 }
 

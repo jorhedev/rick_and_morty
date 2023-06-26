@@ -69,7 +69,7 @@ body{
     scale: 0.8;
     opacity: 0.7;
     transition: 0.5s;
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 .container .box:hover img{
     scale: 0.6;

@@ -19,7 +19,7 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
       }
       else{
          setIsFav(true);
-         addFav(id, name, status, species, gender, origin, image)
+         addFav({id, name, status, species, gender, origin, image})
       }
    }
 
@@ -29,14 +29,16 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
             setIsFav(true);
          }
       });
-   }, [myFavorites]);
+      console.log(myFavorites);
+   }, [myFavorites, id]);
 
    return (
       <div className={styles.container}>
-         <button onClick={handleFavorite}>{isFav ? '❤️' :'🤍'} </button>
          <div className={styles.box}>
          <b></b>
-         <button onClick={handleOnClose}>X</button>
+         
+         <button  onClick={handleFavorite}>{isFav ? '❤️' :'🤍'} </button>
+
          <img src={image} alt='' /> 
             <div className={styles.card}>
                <Link to={`/detail/${id}`} >
@@ -47,6 +49,7 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
                <h3>{gender}</h3>
                <h3>{origin}</h3>
          
+         <button  onClick={handleOnClose}>X</button>
 
             </div>
          </div>   
@@ -63,7 +66,7 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addFav: (character) => dispatch(addFav(character)),
+    addFav: (characters) => dispatch(addFav(characters)),
     removeFav: (id) => dispatch(removeFav(id)),
   };
 };
