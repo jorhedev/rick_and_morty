@@ -78,7 +78,7 @@ function App() {
          <Route path="/" element={access ? <Navigate to="/home" /> : <Form onLogin={login} />}/>
          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/> 
          <Route path="/about" element={<About/>}/>
-         <Route path="/favorites" element={<Favorites/>} />
+         <Route path="/favorites" element={<Favorites/>}  onClose={onClose} />
          <Route path="/detail/:id" element={<Detail />} />
          <Route path="*" element={<Error404/>}/>
          
