@@ -10,7 +10,7 @@ const  Nav = ({onSearch, addRandomCharacter, onLogout}) => {
     const [id, setId] = useState('');
     
     const handleRandomCharacter = () => {
-      const randomCharacterId = Math.floor(Math.random() * 5) + 1;
+      const randomCharacterId = Math.floor(Math.random() * 826) + 1;
       const apiUrl = `http://localhost:3001/rickandmorty/character/${randomCharacterId}`;
 
         axios
