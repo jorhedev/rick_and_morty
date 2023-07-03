@@ -1,16 +1,32 @@
-const http = require('http');
-const getCharById = require('./controllers/getCharById')
-
-http
-.createServer((req, res) =>{
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    if(req.url.includes( "/rickandmorty/character") ){
-        const id = req.url.split("/").at(-1);
-
-        getCharById(res, +id)
+const express = require("express");
+const server = express();
+const router = require("./routes/index.js");
 
 
-    }
-})
-.listen(3001, "localhost")
+// Middleware para manejar el cuerpo de la solicitud en formato JSON
+server.use(express.json());
+
+server.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  next();
+});
+
+
+
+// Middleware para agregar "/rickandmorty" antes de las rutas
+server.use("/rickandmorty", router);
+
+
+
+// Iniciar el servidor
+server.listen(3001, () => {
+  console.log("Servidor en funcionamiento en el puerto 3001");
+});
+
+
