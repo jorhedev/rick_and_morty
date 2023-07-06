@@ -1,5 +1,5 @@
 import styles from './About.module.css'
-import aboutProfileImage from '../../images/aboutProfile.jpg';
+import aboutProfileImage from '../../images/aboutProfile2.JPG';
 
 
 const About = () =>{
