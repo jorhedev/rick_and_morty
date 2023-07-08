@@ -23,7 +23,7 @@ body{
 .container .box{
     position: relative;
     width: 280px;
-    height: 350px;
+    height: 380px;
     margin: 28px 30px;
     background:#111;
     display: flex;
@@ -62,18 +62,24 @@ body{
     z-index: 2;
     border-radius: 2rem;
 }
+
+.container .box:hover{
+    box-shadow: 0 0 10px cyan, 0 0 10px #4dff03;
+
+}
+
 .container .box img{
     position: relative;
     width: 100%;
     z-index: 3;
     scale: 0.8;
-    opacity: 0.7;
+    opacity: 0.6;
     transition: 0.5s;
     border-radius: 1rem;
 }
 .container .box:hover img{
     scale: 0.6;
-    opacity: 0.9;
+    opacity: 1;
     transform: translateY(-70px);
 }
 
@@ -89,25 +95,10 @@ body{
     z-index: 3;
 }
 
-.container .box button {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: 0.5s;
-    transform: scale(0);
-    z-index: 3;
-}
-
-.container .box:hover button{
-    transform: translateY(-310px);
-}
 
 .container .box:hover .card{
     transform: scale(1);
-    bottom: 20px;
+    bottom: 30px;
 }
 
 .container .box .card h2{
@@ -127,7 +118,25 @@ body{
     color: #fff;
 }
 
+.container .box button {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.8s;
+    transform: scale(0);
+    z-index: 3;
+}
+
+.container .box:hover button{
+    transform: translateY(-310px);
+    transition: 0.8s;
+}
+
 .container .box button{
+
     color: #4dff03;
     cursor: pointer;
     width: 50px;

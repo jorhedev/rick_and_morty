@@ -1,0 +1,21 @@
+
+.container{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    padding: 30px 30px;
+    background-color:rgb(7, 7, 7, 0.7);
+    box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
+
+}
+
+.container p{
+    color: white;
+}
+

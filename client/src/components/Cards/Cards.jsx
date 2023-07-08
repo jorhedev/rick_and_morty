@@ -1,4 +1,5 @@
 import Card from '../Card/Card.jsx';
+import Footer from '../Footer/Footer.jsx';
 import styles from './Cards.module.css'
 
 
@@ -26,6 +27,7 @@ const Cards = ({characters, onClose}) => {
          }
       </div>
       </>
+      <Footer/>
    </div>
    );
 }

@@ -13,7 +13,6 @@
     justify-content: center;
     min-height: 100vh;
     width: 100%;
-    padding: 78px 0px;
     background-image: url("../../images/Background03.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -32,7 +31,8 @@
     background-clip: padding-box;
     transition: 0.5 ease;
     box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
-    
+    transition: 2s;
+
 }
 
 .reverse img:hover{
@@ -46,19 +46,20 @@
 }
 
 .aboutContent{
+    margin-top: 4rem;
     width: 1130px;
     max-width: 95%;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
+
 }
 
 .container h1{
     color: white;
-    font-size: 65px;
+    font-size: 60px;
     text-transform: capitalize;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .container{
@@ -70,12 +71,12 @@
 
 .container h5{
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     text-transform: capitalize;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .container span{
-    font-size: 25px;
+    font-size: 20px;
     color: #00d0ff;
 }
 
@@ -85,7 +86,7 @@
     text-align: justify;
     letter-spacing: 1px;
     line-height: 28px;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 45px;
 }
 .aboutMe button{

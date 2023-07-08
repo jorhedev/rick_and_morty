@@ -1,13 +1,19 @@
 import { connect } from 'react-redux';
+import { removeFav } from '../../redux/actions';
+
 import Card from "../Card/Card";
 import styles from './Favorites.module.css'
 
 
-const Favorites = ({myFavorites}) =>{
+const Favorites = ({myFavorites, removeFav}) =>{
+  const onClose = (id) => {
+    removeFav(id);
+  };
+
     return(
       <div className={styles.container}>
       <div className={styles.cards}>
-        {myFavorites?.map(fav=> {
+        {myFavorites.map(fav=> {
             return(
           <Card
             key={fav.id}
@@ -18,7 +24,8 @@ const Favorites = ({myFavorites}) =>{
             gender={fav.gender}
             origin={fav.origin}
             image={fav.image}
-            onClose={fav.onClose}
+            onClose={onClose}
+
             />
             )
         })
@@ -34,6 +41,12 @@ const mapStateToProps = (state) => {
       myFavorites: state.myFavorites,
     };
   };
+
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      removeFav: (id) => dispatch(removeFav(id)),
+    };
+  };
   
-export default connect(mapStateToProps)(Favorites);
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
 

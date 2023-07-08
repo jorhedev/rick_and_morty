@@ -29,7 +29,6 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
             setIsFav(true);
          }
       });
-      console.log(myFavorites);
    }, [myFavorites, id]);
 
    return (
@@ -48,9 +47,7 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
                <h3>{species}</h3>
                <h3>{gender}</h3>
                <h3>{origin}</h3>
-         
-         <button  onClick={handleOnClose}>X</button>
-
+               <button onClick={handleOnClose}>X</button>
             </div>
          </div>   
       </div>
