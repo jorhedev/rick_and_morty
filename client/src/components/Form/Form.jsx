@@ -61,7 +61,7 @@ const Form = ({onLogin}) =>{
         <div className={styles.container}>
             <div className={styles.box}>
                 <form className={styles.form} onSubmit={handleOnSubmit}>
-                <h1>LOGIN</h1>
+                <img src={require("../../images/logo.png")} alt="Logo" />
 
                 <label htmlFor="email">Email:</label>
                 <input type="text" name="email" value={userData.email} onChange={handleOnChange} />

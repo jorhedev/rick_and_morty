@@ -32,7 +32,7 @@
     transition: 0.5 ease;
     box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
     transition: 2s;
-
+    margin-right: 50px;
 }
 
 .reverse img:hover{
@@ -42,7 +42,7 @@
 }
 
 .aboutMe{
-    width: 550px;
+    width: 570px;
 }
 
 .aboutContent{
@@ -89,7 +89,28 @@
     font-size: 14px;
     margin-bottom: 45px;
 }
-.aboutMe button{
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.icon a{
+    margin-right: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    transition: 2s;
+  }
+
+.icon a:hover {
+    color: cyan;
+}
+
+.contact  button{
     background: transparent;
     color: white;
     text-decoration: none;
@@ -100,7 +121,7 @@
     transition: 2s;
 }
 
-.aboutMe button:hover{
+.contact button:hover{
     background: transparent;
     border: 2px solid #00d0ff;
     box-shadow: 0 0 25px cyan, 0 0 25px #4dff03;

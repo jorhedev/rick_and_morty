@@ -101,9 +101,8 @@ body{
     bottom: 30px;
 }
 
-.container .box .card h2{
+.card .namelink h2{
     position: relative;
-    color: #fff;
     font-weight: 500;
     line-height: 1em;
     font-size: 1.1em;
@@ -112,8 +111,13 @@ body{
     text-align: center;
 }
 
+.namelink a{
+    text-decoration: none;
+    color: #4dff03;
+}
+
 .container .box .card h3{
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.75em;
     color: #fff;
 }

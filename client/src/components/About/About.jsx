@@ -1,12 +1,17 @@
 import styles from './About.module.css'
 import aboutProfileImage from '../../images/aboutProfile2.JPG';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+
+import { NavLink } from 'react-router-dom';
+
+
 
 
 const About = () =>{
     return(
     <div className={styles.container}>
         <div className={styles.aboutContent}>
-            <div className={styles.reverse}>
+        <div className={styles.reverse}>
         <img src={aboutProfileImage} alt="" />
         </div>
             <div className={styles.aboutMe}>
@@ -22,7 +27,14 @@ const About = () =>{
                     robustas y escalables. Mi objetivo es crear soluciones web eficientes y de alta
                     calidad que brinden una excelente experiencia al usuario tanto en el frontend como en el backend.
                 </p>
-                <button>Contactame</button>
+                <div className={styles.contact}>
+                <button>Contáctame</button>
+                    <div className={styles.icon}>
+                    <NavLink activeClassName={styles.active} to='https://github.com/jorhedev' target="_blank"><AiFillGithub/></NavLink>
+                    <NavLink activeClassName={styles.active} to='https://www.linkedin.com/in/hijorhe/' target="_blank"><AiFillLinkedin/></NavLink>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@ import { removeFav } from '../../redux/actions';
 
 import Card from "../Card/Card";
 import styles from './Favorites.module.css'
+import Footer from '../Footer/Footer.jsx';
 
 
 const Favorites = ({myFavorites, removeFav}) =>{
@@ -31,6 +32,7 @@ const Favorites = ({myFavorites, removeFav}) =>{
         })
     }
         </div>
+              <Footer/>
       </div>
     )
 }

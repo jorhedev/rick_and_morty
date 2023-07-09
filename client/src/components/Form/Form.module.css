@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
 }
 
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 30px #00d0ff, 0 0 25px #4dff03;
+    box-shadow: 0 0 20px #00d0ff, 0 0 35px #4dff03;
     border-radius: 3rem;
 }
 
@@ -38,16 +38,16 @@
     display: flex;
     flex-direction: column;
     color: aliceblue;
-    
+    justify-content: center;
+    align-items: center ;
 }
 
-.form h1{
+.form img{
     display: flex;
     align-items: center ;
     justify-content: center;
     margin-bottom: 10px;
-    color: #4dff03;
-
+    width: 180px;
 }
 
 .form label{
@@ -65,6 +65,7 @@
     border: none;
     box-shadow: 0 0 5px cyan, 0 0 5px #4dff03;
     background-color:  rgba(0, 0, 0, 0.3);
+    width: 180px;
     padding-left: 1rem;
 
 }
@@ -105,6 +106,6 @@
 .error {
     font-size: 0.8rem;
     margin-top: 5px;
-    width: 217px;
+    width: 180px;
 
   }

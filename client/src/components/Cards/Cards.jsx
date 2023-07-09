@@ -6,8 +6,9 @@ import styles from './Cards.module.css'
 const Cards = ({characters, onClose}) => {
 
    return(
-   <div className={styles.container}>
-      <>
+      <>   
+      <div className={styles.container}>
+
       <div className={styles.cards}>
          {
          characters.map(({id, name, status, species, gender, origin, image}) => (
@@ -26,9 +27,12 @@ const Cards = ({characters, onClose}) => {
          ))
          }
       </div>
-      </>
       <Footer/>
-   </div>
+
+      </div>
+
+      </>
+   
    );
 }
 
