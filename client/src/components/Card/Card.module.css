@@ -83,6 +83,7 @@ body{
     transform: translateY(-70px);
 }
 
+
 .container .box .card {
     position: absolute;
     bottom: 0;
@@ -122,7 +123,44 @@ body{
     color: #fff;
 }
 
-.container .box button {
+.box  .botones{
+    position:absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    transform: scale(0);
+    transition: 0.8s;
+    z-index: 9;
+}
+
+.container .box:hover .botones{
+    transform: translateY(-315px);
+    transition: 1s;
+}
+
+.botones button{
+    
+    color: #4dff03;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+    background: transparent;
+    transition: 0.5s;
+    margin: 1rem;
+}
+
+.botones button:hover{
+    width: 50px;
+    background: #111;
+    border: 2px solid #00d0ff;
+    box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
+
+}
+
+
+/* .box .botones button {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -134,12 +172,12 @@ body{
     z-index: 3;
 }
 
-.container .box:hover button{
+.box .botones:hover button{
     transform: translateY(-310px);
     transition: 0.8s;
 }
 
-.container .box button{
+.botones button{
 
     color: #4dff03;
     cursor: pointer;
@@ -150,10 +188,10 @@ body{
 
 }
 
-.container .box button:hover{
+.botones button:hover{
     width: 50px;
     background: #111;
     border: 2px solid #00d0ff;
     box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
 
-}
+} */
