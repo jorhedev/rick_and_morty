@@ -17,6 +17,37 @@ body{
     background-size:cover;
     background-color: rgba(0, 0, 0, 0.9);
     background-blend-mode: multiply;
+
+}
+
+.container h3{
+    color: #4dff03;
+    letter-spacing: 5px;
+}
+
+.filter{
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons{
+    color: #4dff03;
+    cursor: pointer;
+    width: auto;
+    border: 2px solid #00d0ff;
+    border-radius: 10px;
+    background: transparent;
+    transition: 0.5s;
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+
+.buttons:hover{
+    background: #111;
+    border: 2px solid #00d0ff;
+    box-shadow: 0 0 10px cyan, 0 0 25px #4dff03;
 }
 
 .cards{
@@ -27,6 +58,6 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 10px;
     justify-items: center;
-    padding: 80px 20px 0px 20px;
+    padding: 20px;
     min-height: calc(100vh - 5rem);
 }
